@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "LG0sczVuA7eItab+7FW6CJOrOUQL66WwTOQE3YIZimQ+1TPm+P6F4ogXn9x/UT90C8b+aNT2wojKXdPlLz2rfQ==",
+  "dgSpecHash": "6UgFL+L4RDVSPU2cKTY24QJh2YeFwLD8rr6DXgWEmIoizsYtu9BRK2G7yr2nFy0dP13VDkvbmwIyHeZMeCiBHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Luka\\RiderProjects\\ShelfSenseV1\\OrderCore\\OrderCore.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0\\microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0\\microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.0\\microsoft.entityframeworkcore.analyzers.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.0\\microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.0\\microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0\\microsoft.extensions.logging.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

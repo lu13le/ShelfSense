@@ -1,6 +1,6 @@
 ﻿namespace ReportingCore.Data.Models;
 
-public class SalesReports
+public class SalesReport
 {
     public Guid Id { get; set; }
     public DateTime ReportDate { get; set; }
