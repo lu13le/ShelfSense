@@ -26,6 +26,10 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// Add health check services
+builder.Services.AddHealthChecks()
+    .AddSqlServer(builder.Configuration.GetConnectionString("ProductDatabase") ?? string.Empty, name: "Product Database");
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -37,4 +41,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+// Map health check endpoint
+app.MapHealthChecks("/health");
+
 app.Run();
