@@ -21,15 +21,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Repositories\Interfaces\" />
-      <Folder Include="Endpoints\" />
-      <Folder Include="Handlers\Interfaces\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Update="appsettings.Development.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\OrderCore\OrderCore.csproj" />
     </ItemGroup>
 
 </Project>

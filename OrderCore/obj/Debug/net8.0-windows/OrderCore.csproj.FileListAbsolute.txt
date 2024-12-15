@@ -170,3 +170,4 @@ C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0-windows\runt
 C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0-windows\AutoMapper.dll

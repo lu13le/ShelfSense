@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "e2zS1K+2OG3hLVJLRGJ3Bds7GI+dn1MHcu0rFRDg9IkIpEcKLeyXo/Y88Ia5oaX9pSuIPxTZnlI6DvNhh4bftA==",
+  "dgSpecHash": "NS10rkuMwlCqKRCGrq5LufTiNawmGGhZrLani8zpYx+AKfd8B8z6mQZxiG+s2Jhs7mf2nmUfdzOrS7O9J8FQ6Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Luka\\RiderProjects\\ShelfSenseV1\\SupplierCore\\SupplierCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luka\\.nuget\\packages\\aspnetcore.healthchecks.sqlserver\\8.0.2\\aspnetcore.healthchecks.sqlserver.8.0.2.nupkg.sha512",
+    "C:\\Users\\Luka\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Luka\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Luka\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Luka\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
