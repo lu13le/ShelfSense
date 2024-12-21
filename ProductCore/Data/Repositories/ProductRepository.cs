@@ -18,4 +18,9 @@ public class ProductRepository : IProductRepository
     {
         return await _productCoreContext.Products.FirstOrDefaultAsync(p => p.Id == id);
     }
+
+    public async Task<IEnumerable<Product>> GetAll()
+    {
+        return await _productCoreContext.Products.ToListAsync();
+    }
 }

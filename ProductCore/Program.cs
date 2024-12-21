@@ -1,15 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using ProductCore.Data.Contexts;
-using ProductCore.Data.Repositories;
-using ProductCore.Data.Repositories.Interfaces;
 using ProductCore.Endpoints;
-using ProductCore.Handlers;
-using ProductCore.Handlers.Interfaces;
+using ProductCore.Extensions;
 
 const string prefix = "product-core";
 const string version = "v1";
@@ -19,45 +12,39 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Environment.EnvironmentName = Environments.Development;
 
-builder.Services.AddDbContext<ProductCoreContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ProductDatabase")));
+// Add DbContext
+builder.Services.AddDbContext(builder.Configuration);
 
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductHandler, ProductHandler>();
+// Add repositories and handlers
+builder.Services.AddServices();
 
+// Add Swagger documentation
+builder.Services.AddSwagger();
+
+// Add Health Checks
+builder.Services.AddHealthChecks(builder.Configuration);
+
+// Add Controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "ProductCore API",
-        Version = "v1",
-        Description = "API for managing orders in the Inventory Management System."
-    });
-});
-
-// Add health check services
-builder.Services.AddHealthChecks()
-    .AddSqlServer(builder.Configuration.GetConnectionString("ProductDatabase") ?? string.Empty, name: "Product Database");
-
 var app = builder.Build();
 
+// Configure Swagger and API Key Validation
+app.ConfigureSwaggerAndApiKeyValidation();
+
+// Map endpoints
 app.MapProductEndpoints(versionPrefix);
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductCore API v1");
-        c.RoutePrefix = string.Empty; //Makes Swagger the root URL
-    });
-}
-
 app.UseHttpsRedirection();
+
+// Enable static files (for Swagger UI assets)
+app.UseStaticFiles();
+
+app.UseAuthentication();
 app.UseAuthorization();
+
+// Map controllers
 app.MapControllers();
 
 // Map health check endpoint

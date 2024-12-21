@@ -17,4 +17,9 @@ public class ProductHandler : IProductHandler
     {
         return await _productRepository.GetById(id);
     }
+
+    public async Task<IEnumerable<Product>> GetAll()
+    {
+        return await _productRepository.GetAll();
+    }
 }

@@ -5,4 +5,5 @@ namespace ProductCore.Data.Repositories.Interfaces;
 public interface IProductRepository
 {
     Task<Product?> GetById(Guid id);
+    Task<IEnumerable<Product>> GetAll();
 }
