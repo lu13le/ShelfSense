@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ProductCore.Data.Contexts;
 using ProductCore.Data.Repositories;
@@ -29,7 +30,7 @@ public static class ServiceCollectionExtensions
             .AddSqlServer(configuration.GetConnectionString("ProductDatabase") ?? string.Empty,
                 name: "Product Database");
     }
-    
+
     public static void AddSwagger(this IServiceCollection services)
     {
         services.AddSwaggerGen(options =>
@@ -114,13 +115,24 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<ProductCoreContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("ProductDatabase")));
     }
-    
+
+    public static void AddLoggingFilters(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddLogging(logging =>
+        {
+            logging.AddFilter("Microsoft", LogLevel.None); // Disable Microsoft-related logs
+            logging.AddFilter("System", LogLevel.None); // Disable System-related logs
+        });
+    }
+
     public static void ConfigureSerilog(this WebApplicationBuilder builder)
     {
         // Configure Serilog
         Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Information()
             .WriteTo.Console()
-            .WriteTo.File("logs/myapp_log.txt", rollingInterval: RollingInterval.Day)
+            .WriteTo.File(@"C:\Users\Luka\RiderProjects\ShelfSenseV1\logs\myapp_log.txt",
+                rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
         // Add Serilog as the logging provider

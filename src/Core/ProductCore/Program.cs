@@ -14,6 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure Serilog
 builder.ConfigureSerilog();
 
+//Logging filters
+builder.AddLoggingFilters();
+
 // Add Serilog as the logging provider
 builder.Host.UseSerilog();
 
