@@ -120,22 +120,24 @@ public static class ServiceCollectionExtensions
     {
         builder.Services.AddLogging(logging =>
         {
-            logging.AddFilter("Microsoft", LogLevel.None); // Disable Microsoft-related logs
-            logging.AddFilter("System", LogLevel.None); // Disable System-related logs
+            logging.ClearProviders();
+            logging.AddSerilog();  // Add Serilog as the logging provider
+            logging.AddFilter("Microsoft", LogLevel.None);  // Suppress Microsoft logs
+            logging.AddFilter("System", LogLevel.None);     // Suppress System logs
+            logging.AddFilter("Microsoft.Hosting.Lifetime", LogLevel.None); // Suppress Hosting logs
         });
     }
 
     public static void ConfigureSerilog(this WebApplicationBuilder builder)
     {
-        // Configure Serilog
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Information()
-            .WriteTo.Console()
-            .WriteTo.File(@"C:\Users\Luka\RiderProjects\ShelfSenseV1\logs\myapp_log.txt",
-                rollingInterval: RollingInterval.Day)
+            .MinimumLevel.Information()  // Set minimum level to Information to capture logs only from your code
+            .WriteTo.Console()  // Log to the console
+            .WriteTo.File(@"C:\Users\Luka\RiderProjects\ShelfSenseV1\logs\myapp_log.txt", rollingInterval: RollingInterval.Day)  // Log to file
+            .Enrich.FromLogContext()
             .CreateLogger();
 
-        // Add Serilog as the logging provider
+        // Use Serilog as the logging provider
         builder.Host.UseSerilog();
     }
 }
