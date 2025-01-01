@@ -9,6 +9,7 @@ using ProductCore.Data.Repositories;
 using ProductCore.Data.Repositories.Interfaces;
 using ProductCore.Handlers;
 using ProductCore.Handlers.Interfaces;
+using Serilog;
 
 namespace ProductCore.Extensions;
 
@@ -28,7 +29,7 @@ public static class ServiceCollectionExtensions
             .AddSqlServer(configuration.GetConnectionString("ProductDatabase") ?? string.Empty,
                 name: "Product Database");
     }
-
+    
     public static void AddSwagger(this IServiceCollection services)
     {
         services.AddSwaggerGen(options =>
@@ -112,5 +113,17 @@ public static class ServiceCollectionExtensions
         // Add DbContext
         services.AddDbContext<ProductCoreContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("ProductDatabase")));
+    }
+    
+    public static void ConfigureSerilog(this WebApplicationBuilder builder)
+    {
+        // Configure Serilog
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("logs/myapp_log.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+
+        // Add Serilog as the logging provider
+        builder.Host.UseSerilog();
     }
 }

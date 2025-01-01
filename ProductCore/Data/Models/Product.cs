@@ -10,17 +10,17 @@ public class Product
 
     [Required]
     [StringLength(100, ErrorMessage = "Product name cannot exceed 100 characters.")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
-    public string Description { get; set; }
+    public required string Description { get; set; }
 
     [Column(TypeName = "decimal(18,2)")]
     [Range(0, 999999.99, ErrorMessage = "Price must be between 0 and 999999.99.")]
-    public decimal Price { get; set; }
+    public required decimal Price { get; set; }
 
     [Range(0, int.MaxValue, ErrorMessage = "QuantityInStock cannot be negative.")]
-    public int QuantityInStock { get; set; }
+    public required int QuantityInStock { get; set; }
 
     [Required] 
     public DateTime CreatedAt { get; set; }

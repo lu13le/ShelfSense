@@ -3,12 +3,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProductCore.Endpoints;
 using ProductCore.Extensions;
+using Serilog;
 
 const string prefix = "product-core";
 const string version = "v1";
 const string versionPrefix = $"/{prefix}/api/{version}";
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+builder.ConfigureSerilog();
+
+// Add Serilog as the logging provider
+builder.Host.UseSerilog();
 
 builder.Environment.EnvironmentName = Environments.Development;
 

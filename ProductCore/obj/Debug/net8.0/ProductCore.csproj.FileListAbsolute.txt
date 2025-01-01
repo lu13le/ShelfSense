@@ -170,3 +170,13 @@ C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\runtimes\w
 C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\OrderCore.dll
 C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\OrderCore.pdb
 C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\ProductCore\bin\Debug\net8.0\Serilog.Sinks.File.dll

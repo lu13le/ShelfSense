@@ -164,3 +164,13 @@ C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\runtimes\uni
 C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Luka\RiderProjects\ShelfSenseV1\OrderCore\bin\Debug\net8.0\Serilog.Sinks.File.dll
