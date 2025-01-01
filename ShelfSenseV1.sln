@@ -1,16 +1,15 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BFD783FC-27F3-48A4-926E-810D15EC0EAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5A10F3FB-D2D9-4FE3-B62F-BF62CB547C95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCore", "ProductCore\ProductCore.csproj", "{F96594AA-A932-419B-A538-89B30C6B172A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCore", "src\Core\ProductCore\ProductCore.csproj", "{F96594AA-A932-419B-A538-89B30C6B172A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderCore", "OrderCore\OrderCore.csproj", "{F88511BD-32FF-473A-80CA-963E6B0B26EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderCore", "src\Core\OrderCore\OrderCore.csproj", "{F88511BD-32FF-473A-80CA-963E6B0B26EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplierCore", "SupplierCore\SupplierCore.csproj", "{7C1C829F-179F-4C4D-9687-5396D524FE32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplierCore", "src\Core\SupplierCore\SupplierCore.csproj", "{7C1C829F-179F-4C4D-9687-5396D524FE32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportingCore", "ReportingCore\ReportingCore.csproj", "{334B93BA-0D66-44A4-9E23-05C92E21F2E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportingCore", "src\Core\ReportingCore\ReportingCore.csproj", "{334B93BA-0D66-44A4-9E23-05C92E21F2E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
