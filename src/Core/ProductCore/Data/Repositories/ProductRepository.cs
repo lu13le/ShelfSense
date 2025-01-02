@@ -51,9 +51,6 @@ public class ProductRepository : IProductRepository
     {
         try
         {
-            product.Id = Guid.NewGuid();
-            product.CreatedAt = DateTime.UtcNow;
-            product.UpdatedAt = DateTime.UtcNow;
             _productCoreContext.Add(product);
             await _productCoreContext.SaveChangesAsync();
             _logger.LogInformation("Successfully created product with ID: {Id} and name: {ProductName}", product.Id,

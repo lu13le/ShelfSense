@@ -53,8 +53,7 @@ public static class Products
                     
                     var isCreated = await handler.Create(request);
                     return isCreated
-                        ? Results.Created($"/products/{request.Name}",
-                            new { Message = $"The product with name: {request.Name} is successfully created." })
+                        ? Results.Ok()
                         : Results.Problem("The product could not be created due to an unexpected error.");
                 })
             .Produces<IResult>()

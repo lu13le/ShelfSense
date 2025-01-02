@@ -19,4 +19,7 @@ public class OrderHandler : IOrderHandler
         var order = await _orderRepository.GetById(id);
         return order?.ToOrderDto();
     }
+
+    public async Task<bool> Create(CreateOrderRequestDto request)
+        => await _orderRepository.Create(request.ToOrder());
 }

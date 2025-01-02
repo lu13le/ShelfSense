@@ -20,6 +20,9 @@ public static class ProductMapping
     {
         return new Product
         {
+            Id = Guid.NewGuid(),
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
             Description = request.Description,
             Name = request.Name,
             Price = request.Price,

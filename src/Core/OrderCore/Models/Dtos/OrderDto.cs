@@ -1,5 +1,4 @@
-﻿using OrderCore.Data.Models;
-using OrderCore.Data.Models.Enums;
+﻿using OrderCore.Models.Enums;
 
 namespace OrderCore.Models.Dtos;
 
@@ -11,4 +10,4 @@ public record OrderDto(
     string CustomerName,
     string CustomerEmail,
     string ShippingAddress,
-    List<OrderItem> OrderItems);
+    List<OrderItemDto> OrderItems);
