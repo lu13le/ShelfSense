@@ -10,10 +10,10 @@ public class Product
 
     [Required]
     [StringLength(100, ErrorMessage = "Product name cannot exceed 100 characters.")]
-    public required string Name { get; set; }
+    public required string Name { get; init; }
 
     [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
-    public required string Description { get; set; }
+    public required string Description { get; init; }
 
     [Column(TypeName = "decimal(18,2)")]
     [Range(0, 999999.99, ErrorMessage = "Price must be between 0 and 999999.99.")]
