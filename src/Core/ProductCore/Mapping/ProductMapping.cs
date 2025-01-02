@@ -5,26 +5,19 @@ namespace ProductCore.Mapping;
 
 public static class ProductMapping
 {
-    public static ProductDto ToProductDto(this Product product) =>
-        new()
-        {
-            Id = product.Id,
-            CreatedAt = product.CreatedAt,
-            Description = product.Description,
-            Name = product.Name,
-            Price = product.Price,
-            QuantityInStock = product.QuantityInStock,
-            UpdatedAt = product.UpdatedAt
-        };
+    public static ProductDto ToProductDto(this Product product)
+    {
+        var productDto = new ProductDto(product.Id, product.Name, product.Description, product.Price,
+            product.QuantityInStock, product.CreatedAt, product.UpdatedAt);
+        
+        _ = (productDto.Id, productDto.Name, productDto.Description, productDto.Price, productDto.QuantityInStock,
+            productDto.CreatedAt, productDto.UpdatedAt);
+
+        return productDto;
+    }
 
     public static Product ToProduct(this CreateProductRequestDto request)
     {
-        if (request.Price < 0)
-            throw new ArgumentException("Price cannot be negative.", nameof(request.Price));
-
-        if (request.QuantityInStock < 0)
-            throw new ArgumentException("Quantity in stock cannot be negative.", nameof(request.QuantityInStock));
-
         return new Product
         {
             Description = request.Description,
