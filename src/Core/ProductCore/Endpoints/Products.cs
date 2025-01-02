@@ -46,6 +46,11 @@ public static class Products
         products.MapPost("Create",
                 async ([FromBody] CreateProductRequestDto request, [FromServices] IProductHandler handler) =>
                 {
+                    if (!request.TryValidate(out var errorMessage))
+                    {
+                        return Results.BadRequest(errorMessage ?? "Invalid request.");
+                    }
+                    
                     var isCreated = await handler.Create(request);
                     return isCreated
                         ? Results.Created($"/products/{request.Name}",
