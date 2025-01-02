@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using ProductCore.Extensions;
 using ProductCore.Handlers.Interfaces;
 using ProductCore.Models.Dtos;
 
@@ -60,6 +61,11 @@ public static class Products
         products.MapPatch("UpdatePrice",
                 async ([FromBody] UpdateProductPriceRequestDto request, [FromServices] IProductHandler handler) =>
                 {
+                    if (!request.TryValidate(out var errorMessage))
+                    {
+                        return Results.BadRequest(errorMessage ?? "Invalid request.");
+                    }
+                    
                     var isUpdated = await handler.UpdatePrice(request);
                     return isUpdated
                         ? Results.Ok($"The product with id: {request.Id} is successfully updated.")
@@ -71,6 +77,11 @@ public static class Products
         products.MapPatch("UpdateQuantity",
                 async ([FromBody] UpdateProductQuantityRequestDto request, [FromServices] IProductHandler handler) =>
                 {
+                    if (!request.TryValidate(out var errorMessage))
+                    {
+                        return Results.BadRequest(errorMessage ?? "Invalid request.");
+                    }
+                    
                     var isUpdated = await handler.UpdateQuantity(request);
                     return isUpdated
                         ? Results.Ok($"The product with id: {request.Id} is successfully updated.")

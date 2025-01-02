@@ -32,13 +32,6 @@ public class ProductRepository : IProductRepository
         }
     }
 
-    private void LogProductFetch(Guid id, Product? product)
-    {
-        _logger.LogInformation(product is null
-            ? $"Product with ID: {id} not found"
-            : $"Product with ID: {id} fetched successfully", id);
-    }
-
     public async Task<IEnumerable<Product>> GetAll()
     {
         try
@@ -150,5 +143,12 @@ public class ProductRepository : IProductRepository
             _logger.LogError(ex, "An unexpected error occurred while updating the product quantity.");
             return false;
         }
+    }
+    
+    private void LogProductFetch(Guid id, Product? product)
+    {
+        _logger.LogInformation(product is null
+            ? $"Product with ID: {id} not found"
+            : $"Product with ID: {id} fetched successfully", id);
     }
 }

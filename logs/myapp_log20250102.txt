@@ -1,0 +1,76 @@
+2025-01-02 16:58:16.842 +01:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-01-02 16:58:17.046 +01:00 [WRN] The WebRootPath was not found: C:\Users\Luka\RiderProjects\ShelfSenseV1\src\Core\ProductCore\bin\Debug\net8.0\wwwroot. Static files may be unavailable.
+2025-01-02 16:58:17.185 +01:00 [INF] Now listening on: https://localhost:5003
+2025-01-02 16:58:17.186 +01:00 [INF] Now listening on: http://localhost:5002
+2025-01-02 16:58:17.189 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-02 16:58:17.190 +01:00 [INF] Hosting environment: Development
+2025-01-02 16:58:17.191 +01:00 [INF] Content root path: C:\Users\Luka\RiderProjects\ShelfSenseV1\src\Core\ProductCore\bin\Debug\net8.0
+2025-01-02 16:58:17.402 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5003/index.html - null null
+2025-01-02 16:58:17.540 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5003/index.html - 200 null text/html;charset=utf-8 148.2359ms
+2025-01-02 16:58:17.705 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5003/index.js - null null
+2025-01-02 16:58:17.709 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5003/index.js - 200 null application/javascript;charset=utf-8 4.107ms
+2025-01-02 16:58:20.676 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5003/swagger/v1/swagger.json - null null
+2025-01-02 16:58:20.802 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5003/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 126.2356ms
+2025-01-02 16:58:29.019 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5003/product-core/api/v1/Products/GetAll - null null
+2025-01-02 16:58:29.029 +01:00 [INF] Executing endpoint 'HTTP: GET /product-core/api/v1/Products/GetAll'
+2025-01-02 16:58:30.288 +01:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[Description], [p].[Name], [p].[Price], [p].[QuantityInStock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+2025-01-02 16:58:30.385 +01:00 [INF] Successfully fetched 11 products from the database.
+2025-01-02 16:58:30.390 +01:00 [INF] Setting HTTP status code 200.
+2025-01-02 16:58:30.401 +01:00 [INF] Writing value of type 'SelectListIterator`2' as Json.
+2025-01-02 16:58:30.428 +01:00 [INF] Executed endpoint 'HTTP: GET /product-core/api/v1/Products/GetAll'
+2025-01-02 16:58:30.440 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5003/product-core/api/v1/Products/GetAll - 200 null application/json; charset=utf-8 1421.1552ms
+2025-01-02 16:58:47.854 +01:00 [INF] Request starting HTTP/2 PATCH https://localhost:5003/product-core/api/v1/Products/UpdatePrice - application/json 70
+2025-01-02 16:58:47.857 +01:00 [INF] Executing endpoint 'HTTP: PATCH /product-core/api/v1/Products/UpdatePrice'
+2025-01-02 16:58:47.887 +01:00 [INF] Setting HTTP status code 400.
+2025-01-02 16:58:47.888 +01:00 [INF] Writing value of type 'String' as Json.
+2025-01-02 16:58:47.890 +01:00 [INF] Executed endpoint 'HTTP: PATCH /product-core/api/v1/Products/UpdatePrice'
+2025-01-02 16:58:47.890 +01:00 [INF] Request finished HTTP/2 PATCH https://localhost:5003/product-core/api/v1/Products/UpdatePrice - 400 null application/json; charset=utf-8 36.8091ms
+2025-01-02 16:59:20.823 +01:00 [INF] Request starting HTTP/2 PATCH https://localhost:5003/product-core/api/v1/Products/UpdatePrice - application/json 70
+2025-01-02 16:59:20.825 +01:00 [INF] Executing endpoint 'HTTP: PATCH /product-core/api/v1/Products/UpdatePrice'
+2025-01-02 16:59:20.964 +01:00 [INF] Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedAt], [p].[Description], [p].[Name], [p].[Price], [p].[QuantityInStock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__id_0
+2025-01-02 16:59:20.968 +01:00 [INF] Product with ID: 2cf98ba0-5905-4c28-b70f-78c8c683d166 fetched successfully
+2025-01-02 16:59:21.075 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Products] SET [Price] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-01-02 16:59:21.090 +01:00 [INF] Successfully update product price with product ID: "2cf98ba0-5905-4c28-b70f-78c8c683d166" and name: Lollipop
+2025-01-02 16:59:21.092 +01:00 [INF] Setting HTTP status code 200.
+2025-01-02 16:59:21.092 +01:00 [INF] Writing value of type 'String' as Json.
+2025-01-02 16:59:21.094 +01:00 [INF] Executed endpoint 'HTTP: PATCH /product-core/api/v1/Products/UpdatePrice'
+2025-01-02 16:59:21.095 +01:00 [INF] Request finished HTTP/2 PATCH https://localhost:5003/product-core/api/v1/Products/UpdatePrice - 200 null application/json; charset=utf-8 272.0602ms
+2025-01-02 16:59:30.345 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:5003/product-core/api/v1/Products/Delete?id=2cf98ba0-5905-4c28-b70f-78c8c683d166 - null null
+2025-01-02 16:59:30.347 +01:00 [INF] Executing endpoint 'HTTP: DELETE /product-core/api/v1/Products/Delete'
+2025-01-02 16:59:30.414 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedAt], [p].[Description], [p].[Name], [p].[Price], [p].[QuantityInStock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__id_0
+2025-01-02 16:59:30.417 +01:00 [INF] Product with ID: 2cf98ba0-5905-4c28-b70f-78c8c683d166 fetched successfully
+2025-01-02 16:59:30.436 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Products]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-01-02 16:59:30.441 +01:00 [INF] Successfully removed product with ID: "2cf98ba0-5905-4c28-b70f-78c8c683d166" and name: Lollipop
+2025-01-02 16:59:30.442 +01:00 [INF] Setting HTTP status code 204.
+2025-01-02 16:59:30.442 +01:00 [INF] Executed endpoint 'HTTP: DELETE /product-core/api/v1/Products/Delete'
+2025-01-02 16:59:30.443 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:5003/product-core/api/v1/Products/Delete?id=2cf98ba0-5905-4c28-b70f-78c8c683d166 - 204 null null 98.1144ms
+2025-01-02 16:59:38.740 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5003/product-core/api/v1/Products/GetById?id=2cf98ba0-5905-4c28-b70f-78c8c683d166 - null null
+2025-01-02 16:59:38.742 +01:00 [INF] Executing endpoint 'HTTP: GET /product-core/api/v1/Products/GetById'
+2025-01-02 16:59:38.750 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreatedAt], [p].[Description], [p].[Name], [p].[Price], [p].[QuantityInStock], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__id_0
+2025-01-02 16:59:38.751 +01:00 [INF] Product with ID: 2cf98ba0-5905-4c28-b70f-78c8c683d166 not found
+2025-01-02 16:59:38.752 +01:00 [INF] Setting HTTP status code 404.
+2025-01-02 16:59:38.753 +01:00 [INF] Writing value of type 'String' as Json.
+2025-01-02 16:59:38.754 +01:00 [INF] Executed endpoint 'HTTP: GET /product-core/api/v1/Products/GetById'
+2025-01-02 16:59:38.755 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5003/product-core/api/v1/Products/GetById?id=2cf98ba0-5905-4c28-b70f-78c8c683d166 - 404 null application/json; charset=utf-8 14.2854ms
+2025-01-02 16:59:43.639 +01:00 [INF] Application is shutting down...
