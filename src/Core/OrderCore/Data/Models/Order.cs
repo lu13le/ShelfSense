@@ -13,7 +13,8 @@ public class Order
     [EnumDataType(typeof(OrderState))]
     public OrderState State { get; set; }
 
-    [Required] public DateTime OrderDate { get; set; }
+    [Required] 
+    public DateTime OrderDate { get; set; }
 
     [Column(TypeName = "decimal(18,2)")]
     [Range(0, 999999.99, ErrorMessage = "TotalAmount must be between 0 and 999999.99.")]
